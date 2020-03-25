@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3001;
 
 const unirest = require("unirest");
 const words = [
@@ -32,10 +32,25 @@ req.end(function(res) {
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
-app.get("/world", (req, res) =>
+app.get("/word", (req, res) =>
 	res.send({
 		world: words[Math.floor(Math.random() * words.length)]
 	})
 );
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+}
+
+// Send every request to the React app
+// Define any API routes before this runs
+app.get("/guest", function(req, res) {
+	res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
+
+app.get("/", function(req, res) {
+	res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
