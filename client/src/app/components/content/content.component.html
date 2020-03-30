@@ -1,0 +1,60 @@
+<div class="row content">
+  <div class="attempts">
+    <h1 *ngIf="attempts >= 0; else displayZero">{{ attempts }}</h1>
+  </div>
+  <div class="win">
+    <h3>
+      Win: <span class="win-score">{{ winScore }}</span>
+    </h3>
+  </div>
+  <div class="lost">
+    <h3>
+      Lost: <span class="lost-score">{{ lostScore }}</span>
+    </h3>
+  </div>
+  <div class="buttons">
+    <button mat-button class="btn new-game" (click)="startNewGame()">
+      New Game
+    </button>
+    <button
+      mat-button
+      [disabled]="hintClicked"
+      class="btn hint"
+      (click)="getHint()"
+    >
+      Hint
+    </button>
+    <div *ngIf="attempts <= 2">
+      <button
+        mat-button
+        [disabled]="defClicked"
+        class="btn definition"
+        (click)="getDefinition()"
+      >
+        Get Definition
+      </button>
+    </div>
+  </div>
+  <div class="word">
+    <div *ngFor="let letter of hiddenWord">
+      <app-hidden-letters
+        [letter]="letter"
+        class="hidden-letter"
+      ></app-hidden-letters>
+    </div>
+  </div>
+  <h2 class="definition">{{ definition.toUpperCase() }}</h2>
+  <div class="alphabet">
+    <div *ngFor="let letter of alphabet" (click)="getLetter(letter)">
+      <mat-card
+        class="letter"
+        [ngClass]="{
+          green: rightAnswer?.includes(letter),
+          red: wrongAnswer?.includes(letter)
+        }"
+        >{{ letter.toUpperCase() }}</mat-card
+      >
+    </div>
+  </div>
+  <<ng-template #displayZero><h1>0</h1></ng-template>
+</div>
