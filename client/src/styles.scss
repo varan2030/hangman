@@ -29,9 +29,6 @@ $client-theme: mat-light-theme($client-primary, $client-accent, $client-warn);
 
 html,
 body {
-  height: 100%; /* ges Hoehe der Seite -> weitere Hoehenangaben werden relativ hierzu ausgewertet */
-  overflow: hidden; /*  hide scrollbars */
-  opacity: 1;
   -webkit-transition: background 1.5s linear;
   -moz-transition: background 1.5s linear;
   -o-transition: background 1.5s linear;
