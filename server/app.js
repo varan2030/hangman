@@ -9,6 +9,12 @@ const serverless = require("serverless-http");
 app.use(cors());
 
 const words = [
+	"aardvark",
+	"warthog",
+	"impala",
+	"jackal",
+	"klipspringer",
+	"pocupine",
 	"baboon",
 	"cheetah",
 	"chimpanzee",

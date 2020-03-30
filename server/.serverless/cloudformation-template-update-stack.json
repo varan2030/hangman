@@ -144,7 +144,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/server/dev/1585539838300-2020-03-30T03:43:58.300Z/server.zip"
+          "S3Key": "serverless/server/dev/1585578119154-2020-03-30T14:21:59.154Z/server.zip"
         },
         "FunctionName": "server-dev-app",
         "Handler": "app/app.handler",
@@ -163,14 +163,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "AppLambdaVersionjR8DGY1mFkfqavQJOGfbDZqX5o4zZn0odvO7RLWWKcU": {
+    "AppLambdaVersionddL0f2JUWUBjDytkkq2OWFnxbSeSN37gDu3npl7UQI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "2w4bQQkf0C6Rrcy7xw3IjvrhqHYLy/t+987uir78ueM="
+        "CodeSha256": "jVdtzGppu/AkXwNNye+GZYlhmRQYY3iK+Ijliv9q/IQ="
       }
     },
     "ApiGatewayRestApi": {
@@ -382,7 +382,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1585539835006": {
+    "ApiGatewayDeployment1585578116958": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -444,7 +444,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionjR8DGY1mFkfqavQJOGfbDZqX5o4zZn0odvO7RLWWKcU"
+        "Ref": "AppLambdaVersionddL0f2JUWUBjDytkkq2OWFnxbSeSN37gDu3npl7UQI"
       }
     },
     "ServiceEndpoint": {
