@@ -15,7 +15,7 @@
 
 ### Deployment
 * Front-End is deployedin AWS S3 ([link](http://hangman-african-animals.s3-website-us-east-1.amazonaws.com/));
-* Back-End was deployed in AWS (serverless);
+* Back-End is deployed in AWS (serverless);
 
 ## Screen Shots
 ![image](https://github.com/varan2030/hangman/blob/master/client/src/assets/img/home.PNG)
