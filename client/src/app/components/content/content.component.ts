@@ -18,7 +18,7 @@ export class ContentComponent implements OnInit {
   wordSubscription: Subscription;
   rightAnswer = [];
   wrongAnswer = [];
-  attempts: number = 8;
+  attempts: number = 6;
   selected: any;
   definition: string = '';
   winScore: number = 0;
@@ -35,7 +35,7 @@ export class ContentComponent implements OnInit {
   startNewGame() {
     this.rightAnswer = [];
     this.wrongAnswer = [];
-    this.attempts = 8;
+    this.attempts = 6;
     this.hintClicked = false;
     this.defClicked = false;
     this.definition = '';
@@ -88,11 +88,11 @@ export class ContentComponent implements OnInit {
 
   getHint() {
     this.hintClicked = true;
-    const letter = () =>
-      this.word[Math.floor(Math.random() * this.word.length)];
-    this.getLetter(letter());
-    if (this.hiddenWord.includes(letter)) {
-      this.getHint();
+    for (let i = 0; i < this.hiddenWord.length; i++) {
+      if (this.hiddenWord[i] === ' ') {
+        this.getLetter(this.word[i]);
+        break;
+      }
     }
   }
 
