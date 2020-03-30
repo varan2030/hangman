@@ -1,0 +1,11 @@
+<div class="modal">
+  <h1 mat-dialog-title class="{{ data?.status }}">
+    {{ data?.status.toUpperCase() }}
+  </h1>
+  <div *ngIf="data?.gifUrl" mat-dialog-content class="gif">
+    <img width="600" height="400" src="{{ data?.gifUrl }}" />
+  </div>
+  <h1 *ngIf="data?.message" class="message">
+    {{ data?.message.toUpperCase() }}
+  </h1>
+</div>

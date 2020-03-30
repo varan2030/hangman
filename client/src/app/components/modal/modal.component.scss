@@ -1,0 +1,31 @@
+.win {
+  display: block;
+  font-size: 40px;
+  color: cadetblue;
+  margin: 30px 0px 40px 350px;
+}
+.lost {
+  display: block;
+  font-size: 30px;
+  color: red;
+  margin: 30px 0px 40px 350px;
+}
+
+.modal {
+  height: 500px;
+  width: 800px;
+}
+
+.gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-top: 160px;
+}
