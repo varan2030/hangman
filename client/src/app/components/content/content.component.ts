@@ -22,7 +22,7 @@ export class ContentComponent implements OnInit {
   selected: any;
   definition: string = '';
   winScore: number = 0;
-  lostScore: number = 0;
+  loseScore: number = 0;
   hintClicked: boolean = false;
   defClicked: boolean = false;
   constructor(
@@ -65,8 +65,8 @@ export class ContentComponent implements OnInit {
           this.wrongAnswer.push(letter);
           this.attempts--;
           if (this.attempts <= 0) {
-            this.openModal('lost');
-            this.lostScore++;
+            this.openModal('lose');
+            this.loseScore++;
           }
         }
       }
@@ -81,8 +81,8 @@ export class ContentComponent implements OnInit {
       }
     });
     if (this.attempts <= 0) {
-      this.openModal('lost');
-      this.lostScore++;
+      this.openModal('lose');
+      this.loseScore++;
     }
   }
 
@@ -110,7 +110,7 @@ export class ContentComponent implements OnInit {
     } else {
       this.modalDialog.open(ModalComponent, {
         data: {
-          status: 'lost',
+          status: 'lose',
           message: `The word is: ${this.word}`
         }
       });
